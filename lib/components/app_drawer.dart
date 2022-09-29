@@ -8,6 +8,8 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<Auth>(context);
+
     return Drawer(
       child: Column(
         children: [
@@ -37,14 +39,6 @@ class AppDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.format_align_left),
-            title: const Text("Gerenciar Produtos"),
-            onTap: () {
-              Navigator.of(context).pushReplacementNamed(AppRoutes.products);
-            },
-          ),
-          const Divider(),
-          ListTile(
             leading: const Icon(Icons.exit_to_app_sharp),
             title: const Text("Sair"),
             onTap: () {
@@ -52,10 +46,20 @@ class AppDrawer extends StatelessWidget {
                 context,
                 listen: false,
               ).logout();
-              
-              Navigator.of(context).pushReplacementNamed(AppRoutes.authenticationOrHome);
+
+              Navigator.of(context)
+                  .pushReplacementNamed(AppRoutes.authenticationOrHome);
             },
           ),
+          const Divider(),
+          if (auth.email == 'adm@adm.com')
+            ListTile(
+              leading: const Icon(Icons.format_align_left),
+              title: const Text("Gerenciar Produtos"),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed(AppRoutes.products);
+              },
+            ),
         ],
       ),
     );
