@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lojinha/screen/wish_list.dart';
-import 'package:lojinha/utils/custom_route.dart';
 import '../models/auth.dart';
 import '../utils/app_routes.dart';
 import 'package:provider/provider.dart';

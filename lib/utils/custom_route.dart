@@ -26,7 +26,8 @@ class CustomRoute<T> extends MaterialPageRoute<T> {
 
 class CustomPageTransitionsBuilder extends PageTransitionsBuilder {
 
-Widget buildTransitions<T>(
+@override
+  Widget buildTransitions<T>(
     PageRoute<T> route,
     BuildContext context,
     Animation<double> animation,
