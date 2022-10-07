@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lojinha/screen/wish_list.dart';
+import 'package:lojinha/utils/custom_route.dart';
 import '../models/auth.dart';
 import '../utils/app_routes.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +37,11 @@ class AppDrawer extends StatelessWidget {
             title: const Text("Pedidos"),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(AppRoutes.wishList);
+              // Navigator.of(context).pushReplacement(
+              //   CustomRoute(
+              //     builder: ((context) => WishList()),
+              //   ),
+              // );
             },
           ),
           const Divider(),

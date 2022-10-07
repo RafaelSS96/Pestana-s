@@ -56,10 +56,6 @@ class _AuthFormState extends State<AuthForm>
         curve: Curves.linear,
       ),
     );
-
-    // _heightAnimation?.addListener(
-    //   () => setState(() {}),
-    // );
   }
 
   @override
